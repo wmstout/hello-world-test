@@ -59,6 +59,33 @@ python -m pytest tests/
 
 ---
 
+## Security Testing (SAST / SCA)
+
+This repo is intentionally configured with known-vulnerable dependency versions and insecure code patterns so that SAST and SCA scanners have real findings to report.
+
+### SCA — Vulnerable Dependencies
+
+| Language | Package | Version | Vulnerability |
+|----------|---------|---------|---------------|
+| Java | `log4j-core` | 2.14.1 | CVE-2021-44228 — Log4Shell RCE |
+| Java | `commons-collections` | 3.2.1 | CVE-2015-4852 — Insecure Deserialization |
+| Python | `PyYAML` | 5.3.1 | CVE-2020-14343 — Improper Input Validation |
+| Python | `requests` | 2.18.0 | CVE-2018-18074 — Insufficiently Protected Credentials |
+| Python | `Pillow` | 8.0.0 | Multiple CVEs — RCE / path traversal |
+| Python | `urllib3` | 1.24.1 | CVE-2019-11324 — Improper Certificate Validation |
+| Rust | `smallvec` | 0.6.12 | RUSTSEC-2019-0009 — Buffer Overflow / Use-of-Uninitialized-Resource |
+
+### SAST — Insecure Code Patterns
+
+| Language | File | Pattern |
+|----------|------|---------|
+| Java | `DatabaseHelper.java` | SQL injection (string concatenation), OS command injection, hardcoded credentials |
+| Python | `src/utils.py` | `eval()` on user input, `subprocess(shell=True)`, `pickle.loads()`, unsafe `yaml.load()`, hardcoded API key |
+| C++ | `src/utils.cpp` | `strcpy`/`strcat` (buffer overflow), hardcoded password |
+| Rust | `src/utils.rs` | `unsafe` block with raw pointer dereference and `from_utf8_unchecked` |
+
+---
+
 ## Supported Languages
 
 | Code | Language |

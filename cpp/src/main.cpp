@@ -2,6 +2,7 @@
 #include <string>
 
 #include "greeter.h"
+#include "utils.h"
 
 /**
  * Simple Hello World application demonstrating a multi-file C++ project.
@@ -17,6 +18,11 @@ int main(int argc, char* argv[]) {
     Greeter greeter(language);
     std::cout << greeter.greet(name) << "\n";
     std::cout << "Language: " << greeter.getLanguage() << "\n";
+
+    // Demonstrate the utilities module (SAST targets live in utils.cpp).
+    char buf[64];
+    formatGreeting(buf, name.c_str());
+    std::cout << "Formatted: " << buf << "\n";
 
     return 0;
 }

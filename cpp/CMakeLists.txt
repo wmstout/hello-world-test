@@ -7,6 +7,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 add_executable(hello_world
     src/main.cpp
     src/greeter.cpp
+    src/utils.cpp
 )
 
 target_include_directories(hello_world PRIVATE src)

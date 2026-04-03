@@ -16,6 +16,18 @@
     </properties>
 
     <dependencies>
+        <!-- SCA: Log4Shell (CVE-2021-44228) - remote code injection -->
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>2.14.1</version>
+        </dependency>
+        <!-- SCA: Insecure deserialization (CVE-2015-4852 / CVE-2017-15708) -->
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.1</version>
+        </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter</artifactId>
