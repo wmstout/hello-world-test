@@ -1,0 +1,26 @@
+# Java build artifacts
+java/target/
+*.class
+*.jar
+
+# C++ build artifacts
+cpp/build/
+cpp/cmake-build-*/
+
+# Rust build artifacts
+rust/target/
+rust/Cargo.lock
+
+# Python cache
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+python/.pytest_cache/
+
+# Editor / OS files
+.DS_Store
+*.swp
+*.swo
+.idea/
+.vscode/

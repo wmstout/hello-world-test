@@ -1,0 +1,8 @@
+# SCA: PyYAML 5.3.1 — Improper Input Validation (CVE-2020-14343, patched in 5.4)
+PyYAML==5.3.1
+# SCA: requests 2.18.0 — Insufficiently Protected Credentials (patched in 2.20.0)
+requests==2.18.0
+# SCA: Pillow 8.0.0 — multiple CVEs including arbitrary code execution (patched in 9.0.1+)
+Pillow==8.0.0
+# SCA: urllib3 1.24.1 — Improper Certificate Validation (CVE-2019-11324, patched in 1.24.2)
+urllib3==1.24.1
