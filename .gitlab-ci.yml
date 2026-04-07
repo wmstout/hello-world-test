@@ -1,0 +1,4 @@
+include:
+  - project: "wmstout/aicd-tools"
+    ref: "main"              # or a tag/commit SHA for stability
+    file: "/.gitlab-ci.yml"
