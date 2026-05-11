@@ -1,6 +1,6 @@
 # hello-world-test
 
-A polyglot Hello World repo used to test mirror/sync workflows.  
+A polyglot Hello World repo used to test mirror/sync workflows.
 Each application supports multiple greeting languages (`en`, `es`, `fr`, `de`) and accepts optional CLI arguments so that behavioural changes can be verified end-to-end.
 
 ---
