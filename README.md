@@ -5,7 +5,7 @@ Each application supports multiple greeting languages (`en`, `es`, `fr`, `de`) a
 
 ---
 
-## Structure
+## Structure 
 
 ```
 .
