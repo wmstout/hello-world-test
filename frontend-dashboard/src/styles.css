@@ -1,0 +1,200 @@
+:root {
+    --bg-primary: #0f1117;
+    --bg-secondary: #1a1d27;
+    --bg-card: #232733;
+    --text-primary: #e4e6eb;
+    --text-secondary: #9ca3af;
+    --accent: #6366f1;
+    --accent-hover: #818cf8;
+    --success: #22c55e;
+    --error: #ef4444;
+    --border: #2d3140;
+    --radius: 8px;
+}
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    min-height: 100vh;
+}
+
+#main-nav {
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    height: 56px;
+    background: var(--bg-secondary);
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: var(--accent);
+    margin-right: 2rem;
+}
+
+.nav-links { display: flex; gap: 0.5rem; }
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius);
+    transition: all 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+    color: var(--text-primary);
+    background: var(--bg-card);
+}
+
+.nav-user {
+    margin-left: auto;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+}
+
+.view { display: none; }
+.view.active { display: block; }
+
+h1 { margin-bottom: 1.5rem; font-size: 1.5rem; }
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+}
+
+.stat-card h3 { color: var(--text-secondary); font-size: 0.85rem; margin-bottom: 0.5rem; }
+.stat-value { font-size: 1.5rem; font-weight: 700; color: var(--accent); }
+
+.search-bar {
+    display: flex;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+input, textarea {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    color: var(--text-primary);
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius);
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+button {
+    background: var(--accent);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius);
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background 0.2s;
+}
+
+button:hover { background: var(--accent-hover); }
+
+.results-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.result-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.25rem;
+    cursor: pointer;
+    transition: border-color 0.2s;
+}
+
+.result-card:hover { border-color: var(--accent); }
+.result-card h3 { margin-bottom: 0.5rem; }
+.result-card p { color: var(--text-secondary); font-size: 0.9rem; }
+
+.detail-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 2rem;
+}
+
+.detail-card table {
+    width: 100%;
+    margin: 1rem 0;
+    border-collapse: collapse;
+}
+
+.detail-card td {
+    padding: 0.5rem;
+    border-bottom: 1px solid var(--border);
+}
+
+.detail-card td:first-child {
+    color: var(--text-secondary);
+    width: 120px;
+}
+
+.admin-panel {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.admin-panel h3 { margin-bottom: 1rem; }
+
+.success { color: var(--success); }
+.error { color: var(--error); }
+.empty { color: var(--text-secondary); font-style: italic; }
+
+#notification-bar {
+    display: none;
+    position: fixed;
+    bottom: 1.5rem;
+    right: 1.5rem;
+    padding: 1rem 1.5rem;
+    border-radius: var(--radius);
+    font-size: 0.9rem;
+    z-index: 1000;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+}
+
+#notification-bar.error { border-color: var(--error); color: var(--error); }
+#notification-bar.success { border-color: var(--success); color: var(--success); }
+
+#redirect-overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    color: white;
+    font-size: 1.2rem;
+}

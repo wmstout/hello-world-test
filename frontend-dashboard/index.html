@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataFlow Pro — Dashboard</title>
+    <link rel="stylesheet" href="src/styles.css">
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+</head>
+<body>
+    <nav id="main-nav">
+        <div class="nav-brand">DataFlow Pro</div>
+        <div class="nav-links">
+            <a href="#dashboard" class="nav-link active">Dashboard</a>
+            <a href="#datasets" class="nav-link">Datasets</a>
+            <a href="#config" class="nav-link">Config</a>
+            <a href="#admin" class="nav-link">Admin</a>
+        </div>
+        <div class="nav-user" id="user-info"></div>
+    </nav>
+
+    <main id="app">
+        <section id="dashboard-view" class="view active">
+            <h1>Dashboard</h1>
+            <div class="stats-grid" id="stats-container"></div>
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Search datasets...">
+                <button id="search-btn" onclick="searchDatasets()">Search</button>
+            </div>
+            <div id="search-results"></div>
+        </section>
+
+        <section id="datasets-view" class="view">
+            <h1>Datasets</h1>
+            <div id="dataset-list"></div>
+            <div id="dataset-detail"></div>
+        </section>
+
+        <section id="config-view" class="view">
+            <h1>Pipeline Configuration</h1>
+            <textarea id="config-editor" rows="15" placeholder="Paste YAML config..."></textarea>
+            <button onclick="importConfig()">Import Config</button>
+            <div id="config-result"></div>
+        </section>
+
+        <section id="admin-view" class="view">
+            <h1>Administration</h1>
+            <div class="admin-panel">
+                <h3>Custom Query Builder</h3>
+                <textarea id="custom-query" rows="3" placeholder="Enter custom filter expression..."></textarea>
+                <button onclick="runCustomQuery()">Execute</button>
+                <div id="query-result"></div>
+            </div>
+            <div class="admin-panel">
+                <h3>Webhook Manager</h3>
+                <input type="url" id="webhook-url" placeholder="Webhook URL">
+                <button onclick="testWebhook()">Test</button>
+                <div id="webhook-result"></div>
+            </div>
+        </section>
+    </main>
+
+    <div id="notification-bar"></div>
+    <div id="redirect-overlay" style="display:none">
+        <p>Redirecting...</p>
+    </div>
+
+    <script src="src/api.js"></script>
+    <script src="src/app.js"></script>
+</body>
+</html>

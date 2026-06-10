@@ -1,26 +1,32 @@
-# Java build artifacts
-java/target/
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+venv/
+.venv/
+
+# Java
+target/
 *.class
 *.jar
+*.war
 
-# C++ build artifacts
-cpp/build/
-cpp/cmake-build-*/
+# C
+build/
+*.o
+*.so
+dataflow-engine
 
-# Rust build artifacts
-rust/target/
-rust/Cargo.lock
+# Go
+gateway
+vendor/
 
-# Python cache
-__pycache__/
-*.pyc
-*.pyo
-.pytest_cache/
-python/.pytest_cache/
-
-# Editor / OS files
-.DS_Store
-*.swp
-*.swo
+# IDE
 .idea/
 .vscode/
+*.swp
+
+# Environment
+.env
+*.log
